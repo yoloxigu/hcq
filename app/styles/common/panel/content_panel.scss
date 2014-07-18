@@ -1,0 +1,395 @@
+@import "../../browork/components/global";
+@import "../mixin";
+
+.content-panel{
+  background: $backgroundColor;
+  margin-top: 10px;
+  padding-bottom: 60px;
+  @include framePanelBorder();
+
+
+  .content-nav{
+    height: 60px;
+    padding: 0 15px;
+    border-bottom: 1px solid #e3e3e3;
+    ul {
+      list-style-type: none;
+      li {
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        span {
+          display: inline-block;
+          width: 60px;
+          height: 47px;
+          line-height: 47px;
+          margin-top: 10px;
+          cursor: pointer;
+        }
+      }
+      li:not(.search-widget):hover {
+        border-bottom: 3px #9aab20 solid;
+      }
+      .active {
+        border-bottom: 3px #9aab20 solid;
+      }
+
+      .search-widget {
+        margin-top: 20px;
+        float: right;
+        input {
+          width: 120px;
+          height: 16px;
+          margin-right: 5px;
+        }
+        button {
+          width: 50px;
+          height: 22px;
+        }
+      }
+    }
+  }
+
+  .allPanel, #subjectPanel {
+    .filter-subject {
+      list-style-type: none;
+
+      li {
+        display: inline-block;
+      }
+
+      .grid-left {
+        width: 58%;
+
+        ul {
+          &:first-child {
+            margin-left: 15px;
+          }
+
+          li {
+            display: inline-block;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            margin-left: 10px;
+            span {
+              padding: 5px 10px 3px 10px;
+            }
+
+            span:hover {
+              background: #deef20;
+              cursor: pointer;
+            }
+          }
+
+        }
+        .active {
+          span {
+            background: #eaeaea;
+            border: 1px solid #9aab20;
+          }
+        }
+      }
+      .grid-right {
+        width: 40%;
+        text-align: right;
+      }
+
+      .sorter-widget {
+
+        cursor: pointer;
+        span {
+          position: relative;
+          .triangleDown {
+            margin-left: 10px;
+            vertical-align: middle;
+            display: inline-block;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 5px solid #333333;
+          }
+
+          .triangleUp {
+            margin-left: 10px;
+            vertical-align: middle;
+            display: inline-block;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-bottom: 5px solid #333333;
+          }
+
+          .sorter-dropdown {
+            position: absolute;
+            top: 20px;
+            right: 0px;
+            z-index: 1000;
+            border: 1px solid #e3e3e3;
+            width: 80px;
+            li {
+
+              display: block;
+              height: 30px;
+              a {
+                margin: 0;
+                padding: 0;
+                display: block;
+                color: black;
+                height: 30px;
+                line-height: 30px;
+                background: #ffffff;
+                &:hover {
+                  background: #e3e3e3;
+                }
+              }
+            }
+          }
+
+        }
+
+        .spliter {
+          margin: 0 10px;
+        }
+
+
+      }
+
+    }
+
+    .loading-subject {
+      list-style-type: none;
+      li {
+        height: 25px;
+        line-height: 25px;
+        text-align: center;
+        background: #dbffc8;
+        cursor: pointer;
+      }
+    }
+
+    ul li.content-pool {
+      padding: 15px;
+      border-bottom: 1px solid #e3e3e3;
+      list-style-type: none;
+      &:hover {
+        background-color: #fafafa;
+      }
+      .pool-player-left {
+        float: left;
+      }
+
+      .pool-player-right {
+        margin-left: 60px;
+
+        dl {
+          dt {
+          }
+          dd {
+            margin: 0px;
+            padding: 0px;
+          }
+
+          dd.content-pool-title {
+            h4 {
+              margin-top: 15px;
+              margin-bottom: 0;
+
+            }
+          }
+
+          dd.content-pool-text {
+            p {
+              letter-spacing: 1px;
+              line-height: 20px;
+            }
+            .expand-button {
+              float: right;
+              cursor: pointer;
+            }
+          }
+
+          dd.content-pool-pic {
+            clear: both;
+            ul {
+              list-style-type: none;
+              li {
+                display: inline-block;
+                margin-right: 1px;
+              }
+            }
+          }
+
+          dd.content-pool-footer {
+            margin-top: 15px;
+            span {
+              margin-right: 10px;
+            }
+
+            a {
+              float: right;
+              width: 50px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #menuPanel {
+    ul {
+      li {
+        .pool-player-right {
+          position: relative;
+          .menu-function, .menu-helfth {
+            margin-top: 15px;
+            ul {
+              list-style-type: none;
+              li {
+                display: inline-block;
+                height: 20px;
+                line-height: 20px;
+
+              }
+            }
+          }
+
+          .content-pool-pic {
+            position: absolute;
+            top: 0;
+            right: 0;
+          }
+
+        }
+      }
+    }
+  }
+
+
+  #partyPanel {
+    ul {
+      li {
+        .pool-player-right {
+          dl {
+            dt {
+              .party-title {
+                display: inline-block;
+                width: 49%;
+                text-align: left;
+              }
+              .party-price {
+                display: inline-block;
+                width: 25%;
+                text-align: left;
+              }
+
+              .party-member {
+                display: inline-block;
+                width: 25%;
+                text-align: right;
+              }
+            }
+
+            .party-restaurant, .party-time, .party-invite {
+              margin-top: 15px;
+              ul {
+                list-style-type: none;
+                li {
+                  display: inline-block;
+                  height: 20px;
+                  line-height: 20px;
+
+                }
+              }
+            }
+
+            .party-restaurant {
+              margin-top: 20px;
+              .party-restaurant-name {
+                display: inline-block;
+                width: 49%;
+                text-align: left;
+              }
+              .party-restaurant-location {
+                display: inline-block;
+                width: 50%;
+                text-align: left;
+              }
+            }
+
+            .party-time {
+              .start-time {
+                display: inline-block;
+                width: 49%;
+                text-align: left;
+              }
+              .end-time-count {
+                display: inline-block;
+                width: 50%;
+                text-align: left;
+              }
+            }
+
+            .party-invite {
+              .party-invite-gender {
+                display: inline-block;
+                width: 49%;
+                text-align: left;
+
+              }
+
+              .party-button {
+                display: inline-block;
+                width: 50%;
+                text-align: right;
+                button {
+                  width: 100px;
+                  height: 26px;
+                  line-height: 26px;
+                }
+                .had-close {
+                  width: 100px;
+                  height: 26px;
+                  line-height: 26px;
+                  display: inline-block;
+                  border: 1px dashed #c6c6c6;
+
+                }
+              }
+            }
+
+            .content-pool-text {
+              margin-bottom: 20px;
+            }
+          }
+        }
+
+      }
+
+      .inviteMale {
+        border-top: 3px solid rgba(112, 244, 244, 0.9);
+        &:hover {
+          background: rgba(112, 244, 244, 0.1);
+
+        }
+      }
+
+      .inviteFmale {
+        border-top: 3px solid rgba(255, 168, 194, 0.9);
+        &:hover {
+          background: rgba(255, 168, 194, 0.1);
+
+        }
+      }
+    }
+  }
+
+
+  #privilegePanel {
+    ul {
+      li {
+
+      }
+    }
+  }
+
+
+}

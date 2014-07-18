@@ -1,0 +1,40 @@
+<nav class="nav" ng-controller="HeaderCtl">
+    <ul class="left-nav" ng-init="visiter(6, 0)">
+        <li><a id="logo" href="#">好吃圈</a></li>
+        <li ng-class="{active: headerVisited[0]}"><a ng-click="visiter(6, 0)" class="nav-link" href="#">首页</a></li>
+        <li ng-class="{active: headerVisited[1]}"><a ng-click="visiter(6, 1)" class="nav-link" href="#">好吃街</a></li>
+        <li ng-class="{active: headerVisited[2]}"><a ng-click="visiter(6, 2)" class="nav-link" href="#">大饭局</a></li>
+        <li ng-class="{active: headerVisited[3]}"><a ng-click="visiter(6, 3)" class="nav-link" href="#">学做菜</a></li>
+        <li ng-class="{active: headerVisited[4]}"><a ng-click="visiter(6, 4)" class="nav-link" href="#">找圈子</a></li>
+        <li ng-class="{active: headerVisited[5]}"><a ng-click="visiter(6, 5)" class="nav-link" href="#">排行榜</a></li>
+    </ul>
+    <ul class="right-nav">
+        <li id="navCollection"
+            ng-init="hadin = true;hadout = false"
+            ng-mouseenter="hadin = false; hadout = true;"
+            ng-mouseleave="hadin = true; hadout = false;">
+            <a class="nav-link" href="#">WFWalking WFWalki<i ng-class="{triangleUp: hadout,triangleDown: hadin}"></i></a>
+
+            <ul class="nav-dropdown">
+                <li><a href="#">我的收藏</a></li>
+                <li><a href="#">我的预订</a></li>
+                <li><a href="#">我的账户</a></li>
+                <li><a href="#">我的设置</a></li>
+                <li><a href="#">模版设置</a></li>
+                <li><a href="#">餐厅管理</a></li>
+            </ul>
+        </li>
+        <li id="navNotice">
+            <a class="nav-link" href="#">通知</a>
+            <ul class="nav-dropdown">
+                <li><a href="#">消息</a></li>
+                <li><a href="#">评论</a></li>
+                <li><a href="#">回复</a></li>
+                <li><a href="#">私信</a></li>
+                <li><a href="#">提到我的</a></li>
+                <li><a href="#">赞</a></li>
+                <li><a href="#">系统通知</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
